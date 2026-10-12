@@ -1,0 +1,12 @@
+"feature","global","tail99"
+"smoker",0.242,0.181
+"coverage_level",0.171,0.182
+"family_medical_history",0.145,0.199
+"medical_history",0.145,0.202
+"occupation",0.073,0.058
+"exercise_frequency",0.06,0.052
+"gender",0.048,0.036
+"bmi",0.039,0.029
+"children",0.029,0.022
+"region",0.024,0.02
+"age",0.023,0.017

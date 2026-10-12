@@ -58,6 +58,31 @@ pit_lognormal <- function(fit, newdata, ynew) {
   pnorm((log(ynew) - eta) / fit$sigma)
 }
 
+# ---- Normal (Gaussian) regression ----------------------------------------
+# Y_i ~ Normal(eta_i, sigma^2) with an identity link; this is Chikobvu's
+# ordinary-least-squares baseline, with the error variance estimated by
+# maximum likelihood so its likelihood is comparable with the others.
+fit_normal_glm <- function(form, train) {
+  m <- lm(form, data = train)
+  y <- model.response(model.frame(form, train))
+  mu <- fitted(m)
+  sigma <- sqrt(mean(residuals(m)^2))
+  loglik <- sum(dnorm(y, mu, sigma, log = TRUE))
+  npar <- length(coef(m)) + 1
+  n <- length(y)
+  list(lm = m, sigma = sigma, loglik = loglik, npar = npar, n = n,
+       aic = -2 * loglik + 2 * npar,
+       bic = -2 * loglik + log(n) * npar)
+}
+
+predict_normal_mean <- function(fit, newdata) {
+  predict(fit$lm, newdata = newdata)
+}
+pit_normal <- function(fit, newdata, ynew) {
+  mu <- predict(fit$lm, newdata = newdata)
+  pnorm((ynew - mu) / fit$sigma)
+}
+
 # ---- Shared accuracy metrics ---------------------------------------------
 # RMSE / MAE of predicted mean severity, overall and restricted to the upper
 # tail of ACTUAL severity (top (1 - q) fraction).

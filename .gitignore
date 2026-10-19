@@ -7,3 +7,6 @@
 outputs/*.rds
 outputs/*.model
 outputs/xgb.model
+
+# local copy of the Kaggle benchmark data (97 MB, not redistributed)
+insurance_dataset.csv

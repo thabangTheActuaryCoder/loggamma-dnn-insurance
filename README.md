@@ -45,7 +45,7 @@ outputs/tables/     experiment.csv, shap_*.csv
 outputs/figures/    fig_deep_pit.png, fig_nll.png, fig_shap_tail.png
 ```
 
-The scripts `run_glm_core.R`, `run_ml.R`, `run_shapley.R`, `run_supplementary.R` provide
+The scripts `run_glm_core.R`, `run_ml.R` and `run_shapley.R` provide
 the detailed single-dataset analyses used for robustness and coefficient tables.
 
 ## Reproduce

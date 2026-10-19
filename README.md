@@ -40,6 +40,10 @@ R/
   deepdist.R        deep distributional heads in torch (NLL, mean, median, PIT)
   run_experiment.R  main experiment: GLM vs deep heads on both datasets
   run_figures.R     PIT, NLL figures and tail-conditional Shapley
+  figures.R         two manuscript figures from saved outputs
+  run_glm_core.R    distributional GLMs selected by AIC/BIC and KS(PIT)
+  run_ml.R          DNN (torch) and XGBoost benchmarks against the GLMs
+  run_shapley.R     tail-conditional Shapley for XGBoost and the loggamma GLM
 run_all.R           runs the experiment and figures
 outputs/tables/     experiment.csv, shap_*.csv
 outputs/figures/    fig_deep_pit.png, fig_nll.png, fig_shap_tail.png

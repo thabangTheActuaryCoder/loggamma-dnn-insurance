@@ -45,8 +45,8 @@ R/
   run_ml.R          DNN (torch) and XGBoost benchmarks against the GLMs
   run_shapley.R     tail-conditional Shapley for XGBoost and the loggamma GLM
 run_all.R           runs the experiment and figures
-outputs/tables/     experiment.csv, shap_*.csv
-outputs/figures/    fig_deep_pit.png, fig_nll.png, fig_shap_tail.png
+outputs/tables/     experiment.csv, *_accuracy.csv, model_selection.csv, shap_*.csv
+outputs/figures/    fig_deep_pit.png, fig_nll.png, fig_shap_tail.png, fig_pit_qq.png
 ```
 
 The scripts `run_glm_core.R`, `run_ml.R` and `run_shapley.R` provide
